@@ -59,6 +59,22 @@ export default function HomePage({ params }: { params: { locale: string } }) {
               <FadeIn delay={0.2}>
                 <p className="mt-4 text-lg text-slate-600 dark:text-white/70 max-w-xl mx-auto md:mx-0">
                   {t.heroSubtitle}
+                  <div className="mt-5 flex flex-wrap gap-2 justify-center md:justify-start">
+                  {(t.heroBullets ?? '').split('|').filter(Boolean).map((b) => (
+    <span
+      key={b}
+      className="
+        inline-flex items-center rounded-full
+        border border-slate-200 dark:border-white/10
+        bg-white/60 dark:bg-white/5
+        px-3 py-1 text-xs font-medium
+        text-slate-700 dark:text-white/70
+      "
+    >
+      {b}
+    </span>
+  ))}
+</div>
                 </p>
               </FadeIn>
 
@@ -74,7 +90,21 @@ export default function HomePage({ params }: { params: { locale: string } }) {
                     transition-all duration-300
                   "
                 >
-                  {t.ctaQuote}
+                  <FadeIn delay={0.3}>
+                  <div className="mt-8 flex justify-center md:justify-start">
+  <a
+    href={`/${locale}/contact`}
+    className="
+      inline-flex items-center rounded-xl bg-brand-orange
+      px-6 py-3 text-sm font-semibold text-white
+      hover:opacity-95 transition-all
+      shadow-md hover:shadow-lg
+    "
+  >
+    {t.ctaQuote}
+  </a>
+</div>
+</FadeIn>
                 </a>
               </div>
 
@@ -172,6 +202,37 @@ export default function HomePage({ params }: { params: { locale: string } }) {
             </div>
           </SectionShell>
         </FadeIn>
+
+{/* HOW IT WORKS */}
+<FadeIn delay={0.18}>
+  <SectionShell
+    eyebrow={t.howEyebrow}
+    title={t.howTitle}
+    description={t.howDesc}
+  >
+    <div className="grid gap-6 md:grid-cols-3">
+      {(t.howSteps ?? '').split('|').filter(Boolean).map((step, idx) => (
+        <div
+          key={step}
+          className="
+            rounded-2xl border border-slate-200 dark:border-white/10
+            bg-white/70 dark:bg-white/5 backdrop-blur-xl
+            p-6
+          "
+        >
+          <div className="text-xs font-semibold text-brand-orange">
+            {String(idx + 1).padStart(2, '0')}
+          </div>
+          <div className="mt-2 text-base font-semibold text-slate-900 dark:text-white">
+            {step}
+          </div>
+        </div>
+      ))}
+    </div>
+  </SectionShell>
+</FadeIn>
+
+
 
         {/* WHY SHIP IT */}
         <FadeIn delay={0.2}>

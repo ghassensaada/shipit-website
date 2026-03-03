@@ -29,8 +29,15 @@ export const messages = {
 
     contactTitle: 'Let’s talk about your shipment',
 
-    ctaQuote: 'Get a quote',
-  },
+    ctaQuote: 'Contact us',
+    ctaTrack: 'Track a shipment',
+    heroBullets: 'COD for e-commerce|Real-time tracking|Coverage across Tunisia',
+
+    howEyebrow: 'How it works',
+    howTitle: 'Ship in 3 simple steps',
+    howDesc: 'From pickup to delivery, everything stays visible.',
+    howSteps: 'Create shipment or request pickup|We scan & route your parcel|Track delivery in real time',
+      },
 
   fr: {
     brandTag: 'La logistique simplifiée',
@@ -61,7 +68,13 @@ export const messages = {
 
     contactTitle: 'Parlons de vos expéditions',
 
-    ctaQuote: 'Demander un devis',
+    ctaQuote: 'Contactez-nous',
+    ctaTrack: 'Suivre un envoi',
+    heroBullets: 'COD pour e-commerce|Suivi en temps réel|Couverture en Tunisie',
+    howEyebrow: 'Comment ça marche',
+    howTitle: 'Expédiez en 3 étapes simples',
+    howDesc: 'De la récupération au livraison, tout est visible.',
+    howSteps: 'Créer un envoi ou demander une récupération|Nous scannez et routons votre colis|Suivre la livraison en temps réel',
   },
 
   ar: {
@@ -92,7 +105,13 @@ export const messages = {
 
     contactTitle: 'دعنا نتحدث عن شحنتك',
 
-    ctaQuote: 'احصل على عرض سعر',
+    ctaQuote: 'اتصل بنا',
+    ctaTrack: 'تتبع شحنتك',
+    heroBullets: 'COD للتجارة الإلكترونية|تتبع في الوقت الفعلي|تغطية في تونس',
+    howEyebrow: 'كيف يعمل',
+    howTitle: 'شحن في 3 خطوات بسيطة',
+    howDesc: 'من الاستلام إلى التسليم، كل شيء مرئي.',
+    howSteps: 'إنشاء شحنة أو طلب استلام|نقرأ ونوجه شحنتك|تتبع التسليم في الوقت الفعلي',
   },
 };
 
