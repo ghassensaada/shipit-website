@@ -40,7 +40,14 @@ export default function HomePage({ params }: { params: { locale: string } }) {
             `}
           >
             {/* LEFT */}
-            <div className="flex-1 text-center md:text-left md:self-center">
+            <div
+  className={`
+    flex-1
+    text-center
+    md:text-start
+    md:self-center
+  `}
+>
               <FadeIn delay={0.1}>
                 <h1
                   className={`
@@ -80,7 +87,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
               </FadeIn>
 
               <FadeIn delay={0.35}>
-                <div className="mt-8 flex justify-center md:justify-start">
+              <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-3 rtl:md:justify-end">
                   <a
                     href={`/${locale}/contact`}
                     className={`
