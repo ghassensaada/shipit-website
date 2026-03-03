@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 export function TrackingWidget({ locale }: { locale: string }) {
   const [trackingNumber, setTrackingNumber] = useState('');
-  const [zip, setZip] = useState('');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
@@ -14,13 +13,12 @@ export function TrackingWidget({ locale }: { locale: string }) {
     setError(null);
     setResult(null);
 
-    if (!trackingNumber.trim() || !zip.trim()) {
-      setError(
-        locale === 'fr'
-          ? 'Veuillez saisir le numéro de suivi et le code postal.'
-          : locale === 'ar'
-          ? 'الرجاء إدخال رقم التتبّع والرمز البريدي.'
-          : 'Please enter both tracking number and ZIP code.'
+    if (!trackingNumber.trim()) {
+      setError(locale === 'fr'
+        ? 'Veuillez saisir le numéro de suivi.'
+        : locale === 'ar'
+        ? 'الرجاء إدخال رقم التتبّع.'
+        : 'Please enter a tracking number.'
       );
       return;
     }
@@ -30,7 +28,7 @@ export function TrackingWidget({ locale }: { locale: string }) {
       const res = await fetch(`/${locale}/api/track`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ trackingNumber, zip }),
+        body: JSON.stringify({ trackingNumber }),
       });
       const data = await res.json();
       setResult(data);
@@ -69,60 +67,38 @@ export function TrackingWidget({ locale }: { locale: string }) {
 
       <p className="text-xs text-slate-600 dark:text-white/60 mb-4">
         {locale === 'fr'
-          ? 'Saisissez votre numéro de suivi et votre code postal.'
+          ? 'Saisissez votre numéro de suivi.'
           : locale === 'ar'
-          ? 'أدخل رقم التتبّع والرمز البريدي.'
-          : 'Enter your tracking number and ZIP code.'}
+          ? 'أدخل رقم التتبّع.'
+          : 'Enter your tracking number.'}
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-3">
 
-        {/* Tracking + ZIP side by side on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <input
-            type="text"
-            value={trackingNumber}
-            onChange={(e) => setTrackingNumber(e.target.value)}
-            placeholder="1234 5678 9012"
-            className="
-              w-full rounded-xl bg-white dark:bg-black/20
-              border border-slate-300 dark:border-white/10
-              px-4 py-2.5 text-sm
-              text-slate-900 dark:text-white
-              placeholder:text-slate-400 dark:placeholder:text-white/40
-              focus:outline-none focus:ring-2 focus:ring-brand-orange
-              transition-all
-            "
-          />
-
-          <input
-            type="text"
-            value={zip}
-            onChange={(e) => setZip(e.target.value)}
-            placeholder={
-              locale === 'fr'
-                ? 'Code postal'
-                : locale === 'ar'
-                ? 'الرمز البريدي'
-                : 'ZIP code'
-            }
-            className="
-              w-full rounded-xl bg-white dark:bg-black/20
-              border border-slate-300 dark:border-white/10
-              px-4 py-2.5 text-sm
-              text-slate-900 dark:text-white
-              placeholder:text-slate-400 dark:placeholder:text-white/40
-              focus:outline-none focus:ring-2 focus:ring-brand-orange
-              transition-all
-            "
-          />
-        </div>
+        {/* Tracking input on desktop */}
+        <div>
+  <input
+    type="text"
+    value={trackingNumber}
+    onChange={(e) => setTrackingNumber(e.target.value)}
+    placeholder="1234 5678 9012"
+    className="
+      w-full rounded-xl bg-white dark:bg-black/20
+      border border-slate-300 dark:border-white/10
+      px-4 py-2.5 text-sm
+      text-slate-900 dark:text-white
+      placeholder:text-slate-400 dark:placeholder:text-white/40
+      focus:outline-none focus:ring-2 focus:ring-brand-orange
+      transition-all
+    "
+  />
+</div>
 
         <button
           type="submit"
           disabled={loading}
           className="
-            w-full rounded-xl bg-brand-orange text-slate-950 font-semibold
+            w-full rounded-xl bg-brand-orange text-white font-semibold
             py-2.5 text-sm
             shadow-md hover:shadow-lg
             disabled:opacity-60
