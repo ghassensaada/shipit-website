@@ -6,7 +6,64 @@ import Image from 'next/image';
 import type { Route } from 'next';
 import { locales, type Locale } from '@/i18n/config';
 import type { Messages } from '@/i18n/messages';
+// inside Navbar component (near the flags const)
+const localeLabel: Record<Locale, string> = { en: 'English', fr: 'Français', ar: 'العربية' };
 
+function LocaleSwitcher({ locale }: { locale: Locale }) {
+  const [openLang, setOpenLang] = useState(false);
+
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setOpenLang((v) => !v)}
+        className="
+          h-9 w-9 rounded-full border border-slate-300 dark:border-white/20
+          bg-white/80 dark:bg-black/30 backdrop-blur
+          hover:border-brand-orange/40 transition
+          flex items-center justify-center
+        "
+        aria-label="Change language"
+      >
+        <span
+          className="h-6 w-6 rounded-full bg-cover bg-center"
+          style={{ backgroundImage: `url(${flags[locale]})` }}
+        />
+      </button>
+
+      {openLang && (
+        <div
+          className="
+            absolute right-0 mt-2 w-44 rounded-xl overflow-hidden
+            border border-slate-200 dark:border-white/10
+            bg-white/95 dark:bg-slate-950/90 backdrop-blur
+            shadow-[0_12px_40px_rgba(0,0,0,0.18)]
+          "
+        >
+          {locales.map((l) => (
+            <button
+              key={l}
+              type="button"
+              onClick={() => (window.location.href = `/${l}`)}
+              className="
+                w-full px-3 py-2 text-left text-sm
+                text-slate-700 dark:text-white/80
+                hover:bg-slate-100 dark:hover:bg-white/5
+                flex items-center gap-2
+              "
+            >
+              <span
+                className="h-5 w-5 rounded-full bg-cover bg-center"
+                style={{ backgroundImage: `url(${flags[l]})` }}
+              />
+              <span>{localeLabel[l]}</span>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 const flags: Record<Locale, string> = {
   en: '/flags/us.svg',
   fr: '/flags/fr.svg',
@@ -93,30 +150,7 @@ export function Navbar({ locale, t }: { locale: Locale; t: Messages }) {
           ))}
 
           {/* FLAG SELECTOR */}
-          <select
-            value={locale}
-            onChange={(e) => (window.location.href = `/${e.target.value}`)}
-            className="
-              rounded-lg border border-slate-300 dark:border-white/20
-              bg-white dark:bg-black/30
-              text-transparent
-              pl-10 pr-3 py-1 text-xs
-              appearance-none
-              focus:outline-none focus:ring-2 focus:ring-brand-orange
-              bg-no-repeat bg-left bg-[length:20px_20px]
-              rounded-md
-            "
-            style={{
-              backgroundImage: `url(${flags[locale]})`,
-              backgroundPosition: '6px center',
-            }}
-          >
-            {locales.map((l) => (
-              <option key={l} value={l}>
-                {l.toUpperCase()}
-              </option>
-            ))}
-          </select>
+          <LocaleSwitcher locale={locale} />
         </nav>
       </div>
 
@@ -149,30 +183,7 @@ export function Navbar({ locale, t }: { locale: Locale; t: Messages }) {
           ))}
 
           {/* MOBILE FLAG SELECTOR */}
-          <select
-            value={locale}
-            onChange={(e) => (window.location.href = `/${e.target.value}`)}
-            className="
-              rounded-lg border border-slate-300 dark:border-white/20
-              bg-white dark:bg-black/30
-              text-transparent
-              pl-10 pr-3 py-2 text-sm
-              appearance-none
-              focus:outline-none focus:ring-2 focus:ring-brand-orange
-              bg-no-repeat bg-left bg-[length:22px_22px]
-              rounded-md
-            "
-            style={{
-              backgroundImage: `url(${flags[locale]})`,
-              backgroundPosition: '8px center',
-            }}
-          >
-            {locales.map((l) => (
-              <option key={l} value={l}>
-                {l.toUpperCase()}
-              </option>
-            ))}
-          </select>
+          <LocaleSwitcher locale={locale} />
         </div>
       )}
     </header>
