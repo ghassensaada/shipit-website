@@ -5,7 +5,7 @@ export const messages = {
     brandTag: 'Logistics made simple',
     heroTitle: 'Ship faster.\nTrack every package in real time.',
     heroSubtitle:
-      'Reliable shipping and tracking for individuals, e‑commerce, and enterprises—across Tunisia and beyond.',
+      'Reliable shipping and tracking for individuals, e‑commerce, and enterprises—across Tunisia.',
 
     navHome: 'Home',
     navServices: 'Services',
@@ -43,7 +43,7 @@ export const messages = {
     brandTag: 'La logistique simplifiée',
     heroTitle: 'Expédiez plus vite.\nSuivez chaque colis en temps réel.',
     heroSubtitle:
-      'Une livraison fiable pour les particuliers, l’e‑commerce et les entreprises—en Tunisie et au‑delà.',
+      'Une livraison fiable pour les particuliers, l’e‑commerce et les entreprises—en Tunisie.',
 
     navHome: 'Accueil',
     navServices: 'Services',
@@ -78,40 +78,40 @@ export const messages = {
   },
 
   ar: {
-    brandTag: 'اللوجستيات أصبحت سهلة',
-    heroTitle: 'اشحن أسرع.\nوتابع كل شحنة في الوقت الفعلي.',
+    brandTag: 'اللوجستيات ولّات ساهلة',
+    heroTitle: 'ابعث أسرع.\nوتابع كل شحنة خطوة بخطوة.',
     heroSubtitle:
-      'خدمات شحن وتتبع موثوقة للأفراد والتجارة الإلكترونية والشركات—في تونس وخارجها.',
+      'خدمات شحن وتتبع موثوقة للأفراد والتجارة الإلكترونية والشركات في تونس.',
 
     navHome: 'الرئيسية',
     navServices: 'الخدمات',
     navEnterprise: 'الشركات',
     navContact: 'اتصل بنا',
 
-    servicesEyebrow: 'ماذا نقدم',
+    servicesEyebrow: 'شنيا نقدمو؟',
     servicesTitle: 'خدماتنا',
-    servicesDesc: 'خيارات شحن مرنة لكل احتياج.',
+    servicesDesc: 'خيارات شحن ساهلة وآمنة لكل احتياج.',
 
-    whyEyebrow: 'لماذا Ship It؟',
+    whyEyebrow: 'علاش Ship It؟',
     whyTitle: 'طريقة أفضل للشحن',
     whyDesc:
       'تسليم سريع، تتبع شفاف، وخدمة موثوقة لكل شحنة.',
 
     enterpriseTitle: 'حلول للشركات',
-    enterpriseSubtitle: 'خدمات لوجستية مخصصة للشركات النامية.',
+    enterpriseSubtitle: 'خدمات لوجستية مخصصة للشركات الصغيرة والكبيرة.',
 
     trackingTitle: 'تتبع شحنتك',
-    trackingSubtitle: 'تتبع لحظي لكل شحنة.',
+    trackingSubtitle: 'تتبع لحظة بلحظة لكل شحنة.',
 
-    contactTitle: 'دعنا نتحدث عن شحنتك',
+    contactTitle: 'إيجا نحكيو ونجاوبوك على أي إستفسار',
 
-    ctaQuote: 'اتصل بنا',
-    ctaTrack: 'تتبع شحنتك',
-    heroBullets: 'COD للتجارة الإلكترونية|تتبع في الوقت الفعلي|تغطية في تونس',
+    ctaQuote: 'اتصل بينا',
+    ctaTrack: 'نبّع شحنتك',
+    heroBullets: 'للتجارة الإلكترونية|تتبع لحظة بلحظة|تغطية في تونس',
     howEyebrow: 'كيف يعمل',
-    howTitle: 'شحن في 3 خطوات بسيطة',
+    howTitle: 'أبعث في 3 خطوات ساهلة',
     howDesc: 'من الاستلام إلى التسليم، كل شيء مرئي.',
-    howSteps: 'إنشاء شحنة أو طلب استلام|نقرأ ونوجه شحنتك|تتبع التسليم في الوقت الفعلي',
+    howSteps: 'إنشاء شحنة أو طلب استلام | نقرأ ونوجه شحنتك | تتبع التسليم لحظة بلحظة',
   },
 };
 

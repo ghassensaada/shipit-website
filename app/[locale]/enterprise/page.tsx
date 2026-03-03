@@ -25,10 +25,10 @@ export default function EnterprisePage({ params }: { params: { locale: string } 
             }
             title={
               locale === 'fr'
-                ? 'Une logistique pensée pour les entreprises en croissance'
+                ? 'Une logistique pensée pour les entreprises petites et grandes'
                 : locale === 'ar'
-                ? 'حلول لوجستية للشركات في طور النمو'
-                : 'Logistics for growing enterprises'
+                ? 'حلول لوجستية للشركات الصغيرة والكبيرة'
+                : 'Logistics for small and large enterprises'
             }
             description={
               locale === 'fr'
@@ -66,7 +66,7 @@ export default function EnterprisePage({ params }: { params: { locale: string } 
                   {locale === 'fr'
                     ? 'Nous concevons avec vous des tournées, horaires d’enlèvement et promesses de livraison adaptées à votre activité.'
                     : locale === 'ar'
-                    ? 'نصمّم مع فريقك مسارات وجداول استلام وتسليم تناسب عملك.'
+                    ? 'نخدمو مع فريقك مسارات وجداول استلام وتسليم تناسب عملك.'
                     : 'We work with your operations team to design pickup schedules, routing, and delivery promises that match your business.'}
                 </p>
               </div>
@@ -119,7 +119,7 @@ export default function EnterprisePage({ params }: { params: { locale: string } 
                 {locale === 'fr'
                   ? 'Prêt à discuter d’une offre entreprise ?'
                   : locale === 'ar'
-                  ? 'جاهز لمناقشة حل للشركات؟'
+                  ? 'حاظر لمناقشة حل للشركات؟'
                   : 'Ready to discuss an enterprise plan?'}
               </h3>
 
@@ -127,7 +127,7 @@ export default function EnterprisePage({ params }: { params: { locale: string } 
                 {locale === 'fr'
                   ? 'Partagez votre volume, vos destinations et vos défis actuels.'
                   : locale === 'ar'
-                  ? 'شاركنا حجم شحناتك ووجهاتك والتحديات التي تواجهها.'
+                  ? 'شاركنا حجم شحناتك ووجهاتك والمشاكل التي تواجهك.'
                   : 'Share your shipment volume, destinations, and current challenges—we’ll propose a tailored solution.'}
               </p>
 

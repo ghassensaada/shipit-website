@@ -67,7 +67,7 @@ export function TrackingWidget({
       locale === 'fr'
         ? 'Numéro trop court.'
         : locale === 'ar'
-        ? 'الرقم قصير جدًا.'
+        ? 'الرقم قصير.'
         : 'Tracking number is too short.',
     btn: locale === 'fr' ? 'Suivre' : locale === 'ar' ? 'تتبّع' : 'Track',
     hint1:
@@ -80,7 +80,7 @@ export function TrackingWidget({
       locale === 'fr'
         ? 'Mises à jour en temps réel'
         : locale === 'ar'
-        ? 'تحديثات لحظية'
+        ? 'تحديثات بالوقت'
         : 'Real-time updates',
   };
 

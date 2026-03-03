@@ -146,16 +146,16 @@ export default function HomePage({ params }: { params: { locale: string } }) {
                 {
                   title:
                     locale === 'fr'
-                      ? 'Colis internationaux'
+                      ? 'Suivi en temps réel et notifications'
                       : locale === 'ar'
-                      ? 'شحن دولي'
-                      : 'International parcels',
+                      ? 'متابعة لحظة بلحظة واشعارات بالوقت'
+                      : 'Live tracking and notifications',
                   desc:
                     locale === 'fr'
-                      ? 'Expéditions internationales avec suivi.'
+                      ? 'Expéditions avec suivi en temps réel et notifications.'
                       : locale === 'ar'
-                      ? 'شحن دولي مع تتبّع.'
-                      : 'Cross-border shipping with tracking.',
+                      ? 'شحن مع تتبّع لحظة بلحظة واشعارات بالوقت.'
+                      : 'Shipping with live tracking and notifications.',
                 },
               ].map((item) => (
                 <div

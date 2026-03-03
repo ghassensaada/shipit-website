@@ -49,7 +49,7 @@ export default function ServicesPage({ params }: { params: { locale: string } })
           ? 'E‑commerce & paiement à la livraison'
           : locale === 'ar'
           ? 'متاجر إلكترونية والدفع عند التسليم'
-          : 'E‑commerce & COD',
+          : 'E‑commerce & Cash On Delivery',
       desc:
         locale === 'fr'
           ? 'Pensé pour les boutiques en ligne qui ont besoin de fiabilité et de collecte de paiement.'

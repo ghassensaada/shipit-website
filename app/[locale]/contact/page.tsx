@@ -31,7 +31,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
               locale === 'fr'
                 ? 'Que vous expédiiez occasionnellement ou tous les jours, parlons de la meilleure configuration.'
                 : locale === 'ar'
-                ? 'سواء كنت تشحن أحياناً أو يومياً، دعنا نناقش أفضل إعداد لك.'
+                ? 'سواء كنت تبعث ساعات ولّا كل يوم، خلّينا نقدمولك أفضل خيارات.'
                 : 'Whether you ship occasionally or every day, we’re happy to discuss the best setup for you.'
             }
           >
