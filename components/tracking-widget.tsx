@@ -190,16 +190,20 @@ export function TrackingWidget({
         </div>
 
         <button
-          type="submit"
-          className="
-            w-full rounded-xl bg-brand-orange text-white font-semibold
-            py-3 text-sm
-            shadow-md hover:shadow-lg hover:opacity-95
-            transition-all
-          "
-        >
-          {copy.btn}
-        </button>
+  type="submit"
+  className="
+    w-full rounded-xl bg-brand-orange text-white font-semibold
+    py-3 text-sm
+    shadow-md hover:shadow-lg hover:opacity-95
+    transition-all
+  "
+>
+  {locale === 'fr'
+    ? 'Suivre (Bientôt)'
+    : locale === 'ar'
+    ? 'تتبّع (قريبًا)'
+    : 'Track (Coming Soon)'}
+</button>
 
         {/* Extra details back on main page */}
         <div className="grid grid-cols-2 gap-2 pt-1 text-[11px] text-slate-600 dark:text-white/60">
@@ -225,6 +229,8 @@ export function TrackingWidget({
 
         {error && <p className="text-[11px] text-red-500">{error}</p>}
       </form>
+
+      
     </div>
   );
 }

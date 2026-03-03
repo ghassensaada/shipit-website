@@ -50,22 +50,25 @@ export default function HomePage({ params }: { params: { locale: string } }) {
 >
               <FadeIn delay={0.1}>
                 <h1
-                  className={`
-                    text-4xl sm:text-5xl font-bold tracking-tight
-                    text-slate-900 dark:text-white
-                    whitespace-pre-line
-                  `}
+                  className="
+                  text-4xl sm:text-5xl
+                  font-semibold
+                  leading-[1.35] sm:leading-[1.3]
+                  tracking-tight
+                  text-slate-900 dark:text-white
+                  whitespace-pre-line
+                "
                 >
                   {t.heroTitle}
                 </h1>
               </FadeIn>
 
               <FadeIn delay={0.2}>
-                <p className="mt-4 text-lg text-slate-600 dark:text-white/70 max-w-xl mx-auto md:mx-0">
+                <p className="mt-6 text-lg text-slate-600 dark:text-white/70 max-w-xl mx-auto md:mx-0">
                   {t.heroSubtitle}
                 </p>
 
-                <div className="mt-5 flex flex-wrap gap-2 justify-center md:justify-start">
+                <div className="mt-8 flex flex-wrap gap-2 justify-center md:justify-start">
                   {(t.heroBullets ?? '')
                     .split('|')
                     .filter(Boolean)
