@@ -20,57 +20,68 @@ const t = getMessages(locale); return (
               flex flex-col md:flex-row
               items-center md:items-start
               gap-10 md:gap-20
-            "> {/* LEFT SIDE — TEXT */}
-                <div className="flex-1 text-center md:text-left md:self-center">
-                    <FadeIn delay={0.1}>
-                        <h1 className="
-                    text-4xl sm:text-5xl font-bold tracking-tight sm:tracking-[-0.02em]
-                    text-slate-900 dark:text-white
-                    whitespace-pre-line
-                  "> {t.heroTitle} </h1>
-                    </FadeIn>
-                    <FadeIn delay={0.2}>
-                        <p className="mt-4 text-lg text-slate-600 dark:text-white/70 max-w-xl mx-auto md:mx-0"> {t.heroSubtitle}
-                            <div className="mt-5 flex flex-wrap gap-2 justify-center md:justify-start"> {(t.heroBullets ?? '').split('|').filter(Boolean).map((b) => ( <span key={b} className="
-        inline-flex items-center rounded-full
-        border border-slate-200 dark:border-white/10
-        bg-white/60 dark:bg-white/5
-        px-3 py-1 text-xs font-medium
-        text-slate-700 dark:text-white/70
-      "> {b} </span> ))} </div>
-                        </p>
-                    </FadeIn>
-                    <FadeIn delay={0.3}>
-                        <div className="mt-8 flex flex-wrap justify-center md:justify-start gap-3">
-                            <a href={`/${locale}/contact`} className="
-                    inline-flex items-center rounded-xl border border-slate-300 dark:border-white/10
-                    px-5 py-2.5 text-sm font-semibold
-                    text-slate-700 dark:text-white/80
-                    hover:border-brand-orange/40 hover:text-brand-orange
-                    transition-all duration-300
-                  ">
-                                <FadeIn delay={0.35}>
-  <div className="mt-8 flex justify-center md:justify-start">
-    <a
-      href={`/${locale}/contact`}
+            "> 
+            
+                {/* LEFT SIDE — TEXT */}
+<div className="flex-1 text-center md:text-left md:self-center">
+  <FadeIn delay={0.1}>
+    <h1
       className="
-        inline-flex items-center justify-center
-        rounded-xl bg-brand-orange
-        px-6 py-3 text-sm font-semibold text-white
-        shadow-md hover:shadow-lg hover:opacity-95
-        transition-all
+        text-4xl sm:text-5xl font-bold tracking-tight sm:tracking-[-0.02em]
+        text-slate-900 dark:text-white
+        whitespace-pre-line
       "
     >
-      {t.ctaQuote}
-    </a>
-  </div>
-</FadeIn>
-                            </a>
-                        </div>
-                    </FadeIn>
+      {t.heroTitle}
+    </h1>
+  </FadeIn>
 
+  <FadeIn delay={0.2}>
+    <p className="mt-4 text-lg text-slate-600 dark:text-white/70 max-w-xl mx-auto md:mx-0">
+      {t.heroSubtitle}
+    </p>
 
-                </div> {/* RIGHT SIDE — TRACKING WIDGET */}
+    <div className="mt-5 flex flex-wrap gap-2 justify-center md:justify-start">
+      {(t.heroBullets ?? '')
+        .split('|')
+        .filter(Boolean)
+        .map((b) => (
+          <span
+            key={b}
+            className="
+              inline-flex items-center rounded-full
+              border border-slate-200 dark:border-white/10
+              bg-white/60 dark:bg-white/5
+              px-3 py-1 text-xs font-medium
+              text-slate-700 dark:text-white/70
+            "
+          >
+            {b}
+          </span>
+        ))}
+    </div>
+  </FadeIn>
+
+  <FadeIn delay={0.35}>
+    <div className="mt-8 flex justify-center md:justify-start">
+      <a
+        href={`/${locale}/contact`}
+        className="
+          inline-flex items-center justify-center
+          rounded-xl bg-brand-orange
+          px-6 py-3 text-sm font-semibold text-white
+          shadow-md hover:shadow-lg hover:opacity-95
+          transition-all
+        "
+      >
+        {t.ctaQuote}
+      </a>
+    </div>
+  </FadeIn>
+</div> 
+                
+                
+                {/* RIGHT SIDE — TRACKING WIDGET */}
                 <div id="tracking" className="
                 flex-1 w-full
                 max-w-lg md:max-w-md
@@ -138,5 +149,5 @@ const t = getMessages(locale); return (
             </SectionShell>
         </FadeIn>
     </main>
-    <Footer locale={locale} />undefined
+    <Footer locale={locale} />
     </> ); }
